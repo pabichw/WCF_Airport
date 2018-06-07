@@ -1,0 +1,6 @@
+C:\Users\Wiktor\Desktop\lab_RSO\zad3_WCF\AirportServerConsole\AirportServerConsole\bin\Debug\AirportServerConsole.dll.config
+C:\Users\Wiktor\Desktop\lab_RSO\zad3_WCF\AirportServerConsole\AirportServerConsole\bin\Debug\AirportServerConsole.dll
+C:\Users\Wiktor\Desktop\lab_RSO\zad3_WCF\AirportServerConsole\AirportServerConsole\bin\Debug\AirportServerConsole.pdb
+C:\Users\Wiktor\Desktop\lab_RSO\zad3_WCF\AirportServerConsole\AirportServerConsole\obj\Debug\AirportServerConsole.csprojResolveAssemblyReference.cache
+C:\Users\Wiktor\Desktop\lab_RSO\zad3_WCF\AirportServerConsole\AirportServerConsole\obj\Debug\AirportServerConsole.dll
+C:\Users\Wiktor\Desktop\lab_RSO\zad3_WCF\AirportServerConsole\AirportServerConsole\obj\Debug\AirportServerConsole.pdb
