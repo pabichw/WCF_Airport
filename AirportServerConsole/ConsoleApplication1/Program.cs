@@ -13,10 +13,8 @@ namespace ServerConsole
             ServiceHost host = new ServiceHost(typeof(AirportServerConsole.Service1));
             try
             {
-                
                 host.Open();
                 Console.WriteLine("Service Hosted Sucessfully\nPress anything to terminate service...");
-
             }
             catch (Exception e) {
                 Console.Write(e.Message);

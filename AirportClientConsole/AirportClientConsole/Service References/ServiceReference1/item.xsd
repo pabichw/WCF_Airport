@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AirportServerConsole.Database" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AirportServerConsole.Database" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfFlight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Flight" nillable="true" type="tns:Flight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlight" nillable="true" type="tns:ArrayOfFlight" />
+  <xs:complexType name="Flight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="citySource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cityTarget" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="timeArrive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="timeDeparture" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Flight" nillable="true" type="tns:Flight" />
+</xs:schema>

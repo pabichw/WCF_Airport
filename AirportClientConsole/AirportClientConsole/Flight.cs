@@ -5,13 +5,12 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirportServerConsole.Database
+namespace AirPortsdasdasdasdasd
 {
-    [DataContract]
     public class Flight
     {
         [DataMember]
-        private string citySource;
+        private string citySource { get; set; }
         [DataMember]
         private string cityTarget { get; set; }
         [DataMember]
@@ -26,10 +25,5 @@ namespace AirportServerConsole.Database
             this.timeDeparture = timeDeparture;
             this.timeArrive = timeArrive;
         }
-        public string getCitySource() { return citySource; }
-        public string getCityTarget() { return cityTarget; }
-        public string getTimeDeparture() { return timeDeparture; }
-        public string getTimeArrive() { return timeArrive; }
-
     }
 }

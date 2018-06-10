@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace AirportServerConsole.Database
 {
+
     public class DatabaseManager
     {
-        public static List<Flight> loadFromCSV(string FILE_PATH){
+        private const string PATH_TO_CSV = "C:\\Users\\Wiktor\\Desktop\\lab_RSO\\zad3_WCF\\AirportServerConsole\\AirportServerConsole\\Database\\flights_timetable_db.csv";
+
+        public static List<Flight> loadFromCSV(){
             Console.WriteLine("Loading from .csv file...");
             List<Flight> records = new List<Flight>();
 
             try
             {
-
-                using (var reader = new StreamReader(FILE_PATH))
+                using (var reader = new StreamReader(PATH_TO_CSV))
                 {
                     while (!reader.EndOfStream)
                     {
@@ -34,5 +36,18 @@ namespace AirportServerConsole.Database
             }
         }
 
+        public static List<Flight> getOnlyWithStartingCity(string citySource)
+        {
+            List<Flight> flights = loadFromCSV();
+            List<Flight> filteredFlights = new List<Flight>();
+
+            foreach(Flight flight in flights) {
+                if (flight.getCitySource().Equals(citySource)) {
+                    filteredFlights.Add(flight);
+                }
+            }
+
+            return filteredFlights;
+        }
     }
 }
