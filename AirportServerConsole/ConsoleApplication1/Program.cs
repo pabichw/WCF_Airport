@@ -10,9 +10,10 @@ namespace ServerConsole
     class Program
     {
         static void Main(string[] args) {
-            ServiceHost host = new ServiceHost(typeof(AirportServerConsole.Service1));
             try
             {
+                ServiceHost host = new ServiceHost(typeof(AirportServerConsole.Service1));
+
                 host.Open();
                 Console.WriteLine("Service Hosted Sucessfully\nPress anything to terminate service...");
             }

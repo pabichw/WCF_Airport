@@ -14,16 +14,17 @@ namespace AirportServerConsole
     public interface IService1
     {
         [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
         String GetTestWelcomeMessage(Boolean wannaBeWelcomed);
 
         [OperationContract]
         List<Flight> GetAllFlights();
 
         [OperationContract]
-        List<Flight> GetFlights(string citySource, string cityDestination, string startDepartureTime, string endDepartureTime);
+        List<Flight> GetFlights(string citySource, string cityDestination, DateTime startDepartureTime, DateTime endDepartureTime);
+
+        [OperationContract]
+        List<Flight> GetFlightsNoTime(string citySource, string cityDestination);
+        
         // TODO: Add your service operations here
     }
 

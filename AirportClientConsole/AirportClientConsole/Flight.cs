@@ -7,23 +7,29 @@ using System.Threading.Tasks;
 
 namespace AirPortsdasdasdasdasd
 {
+    [DataContract]
     public class Flight
     {
         [DataMember]
-        private string citySource { get; set; }
+        private string citySource;
         [DataMember]
         private string cityTarget { get; set; }
         [DataMember]
-        private string timeDeparture { get; set; }
+        private DateTime timeDeparture { get; set; }
         [DataMember]
-        private string timeArrive { get; set; }
+        private DateTime timeArrive { get; set; }
 
-        public Flight(string citySource, string cityTarget, string timeDeparture, string timeArrive)
+        public Flight(string citySource, string cityTarget, DateTime timeDeparture, DateTime timeArrive)
         {
             this.citySource = citySource;
             this.cityTarget = cityTarget;
             this.timeDeparture = timeDeparture;
             this.timeArrive = timeArrive;
         }
+        public string getCitySource() { return citySource; }
+        public string getCityTarget() { return cityTarget; }
+        public DateTime getTimeDeparture() { return timeDeparture; }
+        public DateTime getTimeArrive() { return timeArrive; }
+
     }
 }

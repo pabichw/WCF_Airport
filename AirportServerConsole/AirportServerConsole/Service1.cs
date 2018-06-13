@@ -12,19 +12,26 @@ namespace AirportServerConsole
     {
         public List<Flight> GetAllFlights()
         {
-            return DatabaseManager.loadFromCSV();
+            DatabaseManager db_manager = new DatabaseManager();
+            return db_manager.loadAll().GetFlights();
         }
+      
 
-        public string GetData(int value)
+        public List<Flight> GetFlights(string citySource, string cityDestination, DateTime startDepartureTime, DateTime endDepartureTime)
         {
-            throw new NotImplementedException();
+            DatabaseManager db_manager = new DatabaseManager();
+            return db_manager.loadAll().getFlightsWithStartingCityOf(citySource)
+                                        .getFlightsWithDestinatioCityOf(cityDestination)
+                                        .getFlightsWithDepartureInTimeRange(startDepartureTime, endDepartureTime)
+                                        .GetFlights();
         }
 
-        public List<Flight> GetFlights(string citySource, string cityDestination, string startDepartureTime, string endDepartureTime)
-        {
-            return DatabaseManager.getOnlyWithStartingCity(citySource);
+        public List<Flight> GetFlightsNoTime(string citySource, string cityDestination) {
+            DatabaseManager db_manager = new DatabaseManager();
+            return db_manager.loadAll().getFlightsWithStartingCityOf(citySource)
+                                        .getFlightsWithDestinatioCityOf(cityDestination)
+                                        .GetFlights();
         }
-
         public string GetTestWelcomeMessage(bool wannaBeWelcomed)
         {
             return "Hi stranger";

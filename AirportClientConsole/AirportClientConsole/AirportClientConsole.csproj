@@ -55,9 +55,12 @@
     </Compile>
     <Compile Include="Service1.cs" />
     <Compile Include="Utils\CommandParser.cs" />
+    <Compile Include="Utils\DateParser.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReference1\AirportClientConsole.ServiceReference1.Flight.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

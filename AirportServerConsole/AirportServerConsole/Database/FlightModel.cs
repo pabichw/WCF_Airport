@@ -15,11 +15,11 @@ namespace AirportServerConsole.Database
         [DataMember]
         private string cityTarget { get; set; }
         [DataMember]
-        private string timeDeparture { get; set; }
+        private DateTime timeDeparture { get; set; }
         [DataMember]
-        private string timeArrive { get; set; }
+        private DateTime timeArrive { get; set; }
 
-        public Flight(string citySource, string cityTarget, string timeDeparture, string timeArrive)
+        public Flight(string citySource, string cityTarget, DateTime timeDeparture, DateTime timeArrive)
         {
             this.citySource = citySource;
             this.cityTarget = cityTarget;
@@ -28,8 +28,8 @@ namespace AirportServerConsole.Database
         }
         public string getCitySource() { return citySource; }
         public string getCityTarget() { return cityTarget; }
-        public string getTimeDeparture() { return timeDeparture; }
-        public string getTimeArrive() { return timeArrive; }
+        public DateTime getTimeDeparture() { return timeDeparture; }
+        public DateTime getTimeArrive() { return timeArrive; }
 
     }
 }

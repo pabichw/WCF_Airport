@@ -25,9 +25,9 @@ namespace AirportServerConsole.Database
 
         private string cityTargetField;
 
-        private string timeArriveField;
+        private System.DateTime timeArriveField;
 
-        private string timeDepartureField;
+        private System.DateTime timeDepartureField;
 
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
@@ -68,7 +68,7 @@ namespace AirportServerConsole.Database
         }
 
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string timeArrive
+        public System.DateTime timeArrive
         {
             get
             {
@@ -81,7 +81,7 @@ namespace AirportServerConsole.Database
         }
 
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string timeDeparture
+        public System.DateTime timeDeparture
         {
             get
             {
@@ -101,9 +101,6 @@ namespace AirportServerConsole.Database
 public interface IService1
 {
 
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IService1/GetData", ReplyAction = "http://tempuri.org/IService1/GetDataResponse")]
-    string GetData(int value);
-
     [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IService1/GetTestWelcomeMessage", ReplyAction = "http://tempuri.org/IService1/GetTestWelcomeMessageResponse")]
     string GetTestWelcomeMessage(bool wannaBeWelcomed);
 
@@ -111,7 +108,10 @@ public interface IService1
     AirportServerConsole.Database.Flight[] GetAllFlights();
 
     [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IService1/GetFlights", ReplyAction = "http://tempuri.org/IService1/GetFlightsResponse")]
-    AirportServerConsole.Database.Flight[] GetFlights(string citySource, string cityDestination, string startDepartureTime, string endDepartureTime);
+    AirportServerConsole.Database.Flight[] GetFlights(string citySource, string cityDestination, System.DateTime startDepartureTime, System.DateTime endDepartureTime);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IService1/GetFlightsNoTime", ReplyAction = "http://tempuri.org/IService1/GetFlightsNoTimeResponse")]
+    AirportServerConsole.Database.Flight[] GetFlightsNoTime(string citySource, string cityDestination);
 }
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
@@ -148,11 +148,6 @@ public partial class Service1Client : System.ServiceModel.ClientBase<IService1>,
     {
     }
 
-    public string GetData(int value)
-    {
-        return base.Channel.GetData(value);
-    }
-
     public string GetTestWelcomeMessage(bool wannaBeWelcomed)
     {
         return base.Channel.GetTestWelcomeMessage(wannaBeWelcomed);
@@ -163,8 +158,13 @@ public partial class Service1Client : System.ServiceModel.ClientBase<IService1>,
         return base.Channel.GetAllFlights();
     }
 
-    public AirportServerConsole.Database.Flight[] GetFlights(string citySource, string cityDestination, string startDepartureTime, string endDepartureTime)
+    public AirportServerConsole.Database.Flight[] GetFlights(string citySource, string cityDestination, System.DateTime startDepartureTime, System.DateTime endDepartureTime)
     {
         return base.Channel.GetFlights(citySource, cityDestination, startDepartureTime, endDepartureTime);
+    }
+
+    public AirportServerConsole.Database.Flight[] GetFlightsNoTime(string citySource, string cityDestination)
+    {
+        return base.Channel.GetFlightsNoTime(citySource, cityDestination);
     }
 }
